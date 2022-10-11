@@ -1,35 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 body{
-    background-color: skyblue; 
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #43AFFC; 
 }
 .container{
-    width: 600px;
+    width: 650px;
     display: flex;
+    justify-content: space-between; 
     align-items: center;
-    justify-content: space-between;
-    min-height: 100vh; 
-    margin: auto;
+    min-height: 100vh;
+    background: #43AFFC;
 
 }
-.wrapper{
+.wapper{
     width: 300px;
     background: #fff;
-    border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  float:left;
 }
-
-.wrapper header{
-    color: blue;
-    font-size: 21px;
-    font-weight: 500;
-    padding: 16px 15px;
+.wapper header{
     display: flex;
-    align-items: center;
-    border-bottom: 1px solid #bfbfbf;
+  font-size: 21px;
+  font-weight: 500;
+  color: #43AFFC;
+  padding: 16px 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
 }
 .wrapper .input-part{
     margin: 20px 25px 30px;
-    
 }
-input{
+.input-part .info-txt{
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 7px;
+}
+.input-part :where(input, button){
     width: 100%;
     height: 55px;
     border: none;
@@ -39,126 +56,175 @@ input{
 }
 .input-part input{
     text-align: center;
-    border: 1px solid #bfbfbf;
-
+    padding: 0 15px;
+    border: 1px solid #ccc;
 }
-.input-part button{
-    background: #43affc;
-
-}
-button{
+.input-part .separator{
+    height: 1px;
     width: 100%;
-    height: 55px;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    border-radius: 7px;
-    margin-bottom: 30px;
-    cursor: pointer;
-}
-.sepator{
-    font-size: 18px;
+    margin: 25px 0;
+    background: #ccc;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-
 }
-.wapper-init{
-    width: 250px;
+.separator::before{
+    content: "or";
+    color: #b3b3b3;
+    font-size: 19px;
+    padding: 0 15px;
     background: #fff;
-    border-radius: 7px;
 }
+.input-part button{
+    color: #fff;
+    cursor: pointer;
+    background: #43AFFC;
+    transition: 0.3s ease;
+}
+.input-part button:hover{
+    background: #1d9ffc;
+}
+.container .wapper-init{
+    /* display: none; */
+    width: 300px;
+    background: #fff;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  float: right;
+}
+
 .wapper-init header{
-    color: blue;
-    font-size: 21px;
-    font-weight: 500;
-    padding: 16px 15px;
+    background: #fff;
     display: flex;
-    align-items: center;
-    border-bottom: 1px solid #bfbfbf;
+  color: #43AFFC;
+  font-size: 21px;
+  font-weight: 500;
+  padding: 16px 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.weather-path{
+    display: block;
+  /* margin: 30px 0 0; */
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
 }
 #photo{
     display: flex;
     align-items: center;
-    justify-content: center;
+  justify-items: center;
+  flex-direction: column;
 }
-.wapper1 span{
-    font-size: 40px;
-    color: black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+#numb{
     display: flex;
     align-items: center;
-    justify-content: center; 
+  flex-direction: column;
+  justify-items: center;
+  font-weight: 600;
+  font-size: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+.location{
+    display: block;
+    justify-items: center;
+  font-size: 19px;
+  text-align: center;
+  align-items: center;
+
 }
-.wapper1{
+#ita{
     display: flex;
+  font-size: 19px;
+  text-align: center;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-}
-.location span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 #weather{
     display: flex;
+  font-size: 19px;
+  text-align: center;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+.bottom-details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+.bottom-details .column{
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
     align-items: center;
     justify-content: center;
 }
-#me{ 
-    font-size: 21px;
+.column i{
+    color: #5DBBFF;
+    font-size: 40px;
+}
+.column.humidity{
+    border-left: 1px solid #ccc;
+}
+.column .details{
+    margin-left: 3px;
+}
+.details .wapper1, .humidity span{
+    font-size: 18px;
     font-weight: 500;
-    display: block;
-    align-items: center;
-    border-bottom: 1px solid #bfbfbf;
+    margin-top: -3px;
 }
-.weather-path div{
-    font-size: 21px;
-    font-weight: 500;
-    display: block;
-    align-items: center;
-    justify-items: center;
-
+.details .wapper1 .deg{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
 }
-#money{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #bfbfbf;
+.column .details p{
+    font-size: 14px;
+    margin-top: -6px;
 }
-.details1{
-    display: block;
-    align-items: center;
-    border-right: 1px solid #bfbfbf;
-
-    
+.humidity i{
+    font-size: 37px;
 }
-.details{
-    display: block;
-    align-items: center;
-
-
-
-}
-#numb3{
-    display: block;
-    flex-direction: column;
-
-}
-#numb1{
-    display: block;
-    flex-direction: column;
-
-}
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .container{
         display: block;
+        justify-content: space-between; 
         align-items: center;
-        justify-content: space-between;
-        min-height: 100vh; 
+        margin-top: 20px;
+        /* min-height: 100vh; */
+        background: #43AFFC;
+        width: 300px;
+
+
+    
     }
-   
+    body{
+        display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #43AFFC; 
+    }
+    .wapper{
+        position: initial;
+        display: block;
+        align-items: center;
+        justify-items: center;
+    }
+    .wapper-init{
+        position: initial;
+        display: block;
+        align-items: center;
+        justify-items: center;
+        margin-top: 20px;
+        
+
+    }
+
 }
 
 
