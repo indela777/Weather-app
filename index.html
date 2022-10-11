@@ -9,60 +9,50 @@
 </head>
 <body>
     <div class="container">
-        <div class="wrapper">
+        <div class="wapper">
             <header>Weather App</header>
             <section class="input-part">
-                <div class="info-txt"></div>
-                <input type="text" placeholder="Enter City Name" id="init">
-                <div class="sepator">or</div>
-                <button id="getlocal">get current location</button>
+                <div class="info-txt">
+                    <input type="text"  id="init">
+                    <div class="separator"></div>
+                    <button id="getlocal">Get Device Location</button>
+                </div>
             </section>
         </div>
+        
         <div class="wapper-init">
             <header>Weather App</header>
             <section class="weather-path">
-                <div id="me">
-                    <div id="photo">
-    
-                    </div>
-                    <div class = "wapper1">
-                        <span id="numb"></span>
-                        <span id="deg1"></span>
-                    </div>
-                    <div id="weather"></div>
-                    <div class="location">
-                        <span id="ita"></span>
-                    </div>
+                <div id="photo"></div>
+                <span id="numb"> No Data</span>
+                <div class="location">
+                    <span id="weather"></span>
+                    <span id="ita"></span>
                 </div>
-                <div id="money">
-                    <div class="details1">
-                        <div class = "wapper2">
+                
+                <div class="bottom-details">
+                    <div class="column feels">
+                      <img class='bx bxs-thermometer' src="https://play-lh.googleusercontent.com/l0Ah2X-fBGIZtE286Taid95pEwU0lTB5tuH78bh0jXBqH7BSNMZb5wN5fhYyqbG_5Acr=w240-h480-rw" style="height: 7vh;"/>
+                      <div class="details">
+                        <div class="wapper1">
                             <span id="numb1"></span>
+                            <span class="deg"></span>
                         </div>
+                        <p>Feels like</p>
+                      </div>
                     </div>
-                    <div class="details">
-                        <div class = "wapper2">
-                            <span id="numb3"></span>
-                        </div>
-                        
+                    <div class="column humidity">
+                      <img src="https://icons-for-free.com/download-icon-humidity+meteorology+rainy+sign+weather+icon-1320196635965713765_512.png" style="height: 9vh;"/>
+                      <div class="details">
+                        <span id="numb3"></span>
+                        <p>Humidity</p>
+                      </div>
                     </div>
-                </div>
-    
-    
+                </div>    
             </section>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
     <script src="app.js"></script>
-
-
 </body>
 </html>
