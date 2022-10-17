@@ -6,13 +6,7 @@ const locations = document.getElementById('ita');
 const humidity = document.getElementById('numb1');
 const number = document.getElementById('numb3');
 const currentLuction = document.getElementById('getlocal');
-inputTag.addEventListener('keyup', (e) => {
-  // eslint-disable-next-line no-undef
-  if (e.key === 'Enter' && e.target.value !== '') {
-    // eslint-disable-next-line no-use-before-define
-    request(e.target.value);
-  }
-});
+
 const apikey = '6f02a6599be142fa02a402b1df294756';
 const request = async (city) => {
   const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`;
@@ -26,6 +20,13 @@ const request = async (city) => {
   temp.innerHTML = `${mydata.main.temp.toFixed(0)} C`;
   inputTag.value = ' ';
 };
+
+inputTag.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter' && e.target.value !== '') {
+    request(e.target.value);
+  }
+});
+
 currentLuction.addEventListener('click', () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async (location) => {
