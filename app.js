@@ -8,6 +8,7 @@ const number = document.getElementById('numb3');
 const currentLuction = document.getElementById('getlocal');
 
 const apikey = '6f02a6599be142fa02a402b1df294756';
+/* request will fecth the data from open weather and display the content in the ui */
 const request = async (city) => {
   const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`;
   const mydata = await fetch(api).then((response) => response.json()).then((data) => data);
@@ -27,6 +28,8 @@ inputTag.addEventListener('keyup', (e) => {
   }
 });
 
+/* This will fecth the data with longitude latitude
+and display the current location data in the ui */
 currentLuction.addEventListener('click', () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async (location) => {
